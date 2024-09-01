@@ -67,6 +67,9 @@ def sitemap():
 def manifest():
     return app.send_static_file('assets/manifest.json')
 
+@app.route('/ads.txt')
+def ads():
+    return app.send_static_file('assets/ads.txt')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=os.getenv("PORT", default=81))
